@@ -88,9 +88,9 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
     private void bindPopular(ViewHolderPopular holder, Movie movie) {
         if (context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            Glide.with(context).load(movie.getBackdrop()).into(holder.getIvPopular());
+            Glide.with(context).load(movie.getBackdrop()).placeholder(R.drawable.placeholder).into(holder.getIvPopular());
         } else {
-            Glide.with(context).load(movie.getPosterPath()).into(holder.getIvPopular());
+            Glide.with(context).load(movie.getPosterPath()).placeholder(R.drawable.placeholder).into(holder.getIvPopular());
         }
     }
 
@@ -105,7 +105,7 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             imageUrl = movie.getPosterPath();
         }
 
-        Glide.with(context).load(imageUrl).into(holder.getIvPoster());
+        Glide.with(context).load(imageUrl).placeholder(R.drawable.placeholder).into(holder.getIvPoster());
     }
 
 
